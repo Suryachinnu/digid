@@ -1,1 +1,75 @@
-<p>create-user works!</p>
+<form [formGroup]='customerForm' (ngSubmit)="customerSubmit(customerForm)">
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" formControlName="email"/>
+        <p *ngIf="customerForm.controls['email'].touched && customerForm.controls['email'].hasError('required')">Please enter email address</p>
+        <p *ngIf="customerForm.controls['email'].touched && customerForm.controls['email'].hasError('pattern')">Please enter Valid email address</p>
+    </div>
+    <div class="form-group">
+        <label>Secondary Email</label>
+        <input type="text" class="form-control" formControlName="secondaryEmail"/>
+        <p *ngIf="customerForm.controls['secondaryEmail'].touched && customerForm.controls['secondaryEmail'].hasError('required')">Please enter email address</p>
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        <input type="text"  class="form-control" formControlName="phoneNumber"/>
+            <p *ngIf="customerForm.controls['phoneNumber'].touched && customerForm.controls['phoneNumber'].hasError('required')">Please enter Valid phoneNumber</p>
+    </div>
+    <div class="form-group">
+        <label>Secondary Phone</label>
+        <input type="text"  class="form-control" formControlName="secondaryPhone"/>
+        <p *ngIf="customerForm.controls['secondaryPhone'].touched && customerForm.controls['secondaryPhone'].hasError('required')">Please enter Valid phoneNumber</p>
+    </div>
+    <div class="form-group">
+        <label>Full Name</label>
+        <input type="text"  class="form-control" formControlName="fullName"/>
+        <p *ngIf="customerForm.controls['fullName'].touched && customerForm.controls['fullName'].hasError('required')">Please enter fullname</p>
+    </div>
+    <div class="form-group">
+        <label>Upload a profile</label>
+        <input type="file"  class="form-control" formControlName="profileImageUrl"/>
+        <p *ngIf="customerForm.controls['profileImageUrl'].touched && customerForm.controls['profileImageUrl'].hasError('required')">Please upload profile</p>
+    </div>
+    <div class="form-group">
+        <label>Reference Id</label>
+        <input type="text"  class="form-control" formControlName="referenceId"/>
+        <p *ngIf="customerForm.controls['referenceId'].touched && customerForm.controls['referenceId'].hasError('required')">Please enter valid Reference id</p>
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <input type="text"  class="form-control" formControlName="address"/>
+        <p *ngIf="customerForm.controls['address'].touched && customerForm.controls['address'].hasError('required')">Please enter valid address</p>
+    </div>
+    <div class="form-group">
+        <label>Secondary address</label>
+        <input type="text"  class="form-control" formControlName="secondaryAddress"/>
+        <p *ngIf="customerForm.controls['secondaryAddress'].touched && customerForm.controls['secondaryAddress'].hasError('required')">Please enter Secondary address</p>
+    </div>
+    <div class="form-group">
+        <label>State</label>
+        <input type="text"  class="form-control" formControlName="state"/>
+        <p *ngIf="customerForm.controls['state'].touched && customerForm.controls['state'].hasError('required')">Please enter State name   </div>
+    <div class="form-group">
+        <label>User type </label>
+        <input type="text"  class="form-control" formControlName="userType"/>
+        <p *ngIf="customerForm.controls['userType'].touched && customerForm.controls['userType'].hasError('required')">Please enter user type</p>
+    </div>
+    <div class="form-group">
+        <label>Customer Journey Stage </label>
+        <input type="text"  class="form-control" formControlName="customerJourneyStage"/>
+        <p *ngIf="customerForm.controls['customerJourneyStage'].touched && customerForm.controls['customerJourneyStage'].hasError('required')">Please enter jounney stage</p>
+    </div>
+    <div class="form-group">
+        <label>Expiration date </label>
+        <input type="text"  class="form-control" formControlName="expirationDate"/>
+        <p *ngIf="customerForm.controls['expirationDate'].touched && customerForm.controls['expirationDate'].hasError('required')">Please enter valid Expiration date</p>
+    </div>
+    <div class="form-group">
+        <label>Reason</label>
+        <input type="text"  class="form-control" formControlName="reason"/>
+        <p *ngIf="customerForm.controls['reason'].touched && customerForm.controls['reason'].hasError('required')">Please enter Reason</p>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!customerForm.valid">
+        Submit
+    </button>
+</form>

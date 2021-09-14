@@ -13,6 +13,7 @@ import { CreateUserComponent } from './views/create-user/create-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MockJsonService } from './services/mock-json.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,14 +23,16 @@ import { MockJsonService } from './services/mock-json.service';
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    CreateUserComponent
+    CreateUserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(MockJsonService)
+    HttpClientInMemoryWebApiModule.forRoot(MockJsonService),
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,16 @@
-<p>users works!</p>
+<table class="table table-condensed">
+    <thead>
+        <th>username</th>
+        <th>phone</th>
+        <th>email</th>
+        <th>address</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of customers">
+            <td>{{user.fullName}}</td>
+            <td>{{user.phoneNumber}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.address}}</td>
+        </tr>
+    </tbody>
+</table>
